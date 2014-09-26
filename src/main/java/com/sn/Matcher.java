@@ -4,13 +4,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Matcher {
-    public List<Double> match(Matrix data, Matrix pattern) {
-        List<Double> result = new LinkedList<Double>();
+    public List<Similarity> match(Matrix data, Matrix pattern) {
+        List<Similarity> result = new LinkedList<Similarity>();
         for (int i = 0; i < data.getRows() - pattern.getRows() + 1; i++) {
             for (int j = 0; j < data.getColumns() - pattern.getColumns() + 1; j++) {
                 Similarity similarity = calculateSimilarity(data, pattern, i, j);
                 if (similarity.isGoodEnough()) {
-                    result.add(similarity.getRatio());
+                    result.add(similarity);
                 }
             }
         }
@@ -29,6 +29,6 @@ public class Matcher {
                 }
             }
         }
-        return new Similarity(hit, miss);
+        return new Similarity(hit, miss, startRow, startCol);
     }
 }
