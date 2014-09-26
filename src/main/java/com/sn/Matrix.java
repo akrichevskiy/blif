@@ -8,10 +8,19 @@ import java.util.List;
 
 public class Matrix {
     private char[][] field;
+
     private int columns = -1;
     private int rows = -1;
 
     public Matrix() {
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+
+    public int getRows() {
+        return rows;
     }
 
     public Matrix loadFromFile(String fileName) throws IOException {
@@ -49,12 +58,6 @@ public class Matrix {
             }
             i++;
         }
-    }
-
-    public static Matrix initWith(int[][] arr) {
-        Matrix matrix = new Matrix();
-
-        return matrix;
     }
 
     public char[][] getField() {

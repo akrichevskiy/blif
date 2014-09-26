@@ -18,8 +18,4 @@ public class MatrixTest {
         Assert.assertArrayEquals(expectedResult, matrix.getField());
     }
 
-    @Test
-    public void testInitWith() throws Exception {
-
-    }
 }
