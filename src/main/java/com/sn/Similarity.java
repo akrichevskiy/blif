@@ -2,14 +2,15 @@ package com.sn;
 
 public class Similarity {
     private double ratio;
-    private double threshold = 0.9;
 
     public Similarity(int hit, int miss) {
-        this.ratio = hit / (hit + miss);
+        this.ratio = (double)hit / (hit + miss);
     }
 
     public boolean isGoodEnough() {
-        return ratio > threshold;
+        double threshold = 0.7;
+        double delta = 0.0001;
+        return ratio - threshold > delta;
     }
 
     public double getRatio() {

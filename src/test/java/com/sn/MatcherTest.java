@@ -15,7 +15,7 @@ public class MatcherTest {
         Matrix data = new Matrix().loadFromFile(getClass().getResource("/testdata.blf").getPath());
         Matrix pattern = new Matrix().loadFromFile(getClass().getResource("/testpattern.blf").getPath());
         List<Double> actual = new Matcher().match(data, pattern);
-        LinkedList<Double> expected = new LinkedList<Double>(Arrays.asList(1.0));
+        LinkedList<Double> expected = new LinkedList<Double>(Arrays.asList(0.75, 0.75, 1.0));
         assertEquals(expected, actual);
     }
 }
